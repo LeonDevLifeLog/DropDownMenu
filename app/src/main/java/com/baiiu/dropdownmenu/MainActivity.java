@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements OnFilterDoneListe
     }
 
     private void initFilterDropDownView() {
-        String[] titleList = new String[]{"第一个", "第二个", "第三个", "第四个"};
+        String[] titleList = new String[]{"第一个", "第二个", "第三个", "第四个","第五个"};
         dropDownMenu.setMenuAdapter(new DropMenuAdapter(this, titleList, this));
     }
 

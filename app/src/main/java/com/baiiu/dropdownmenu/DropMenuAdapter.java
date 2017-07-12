@@ -5,6 +5,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.baiiu.dropdownmenu.view.betterDoubleGrid.BetterDoubleGridMultiSelectView;
 import com.baiiu.dropdownmenu.view.betterDoubleGrid.BetterDoubleGridView;
 import com.baiiu.filter.adapter.MenuAdapter;
 import com.baiiu.filter.adapter.SimpleTextAdapter;
@@ -26,6 +27,9 @@ import java.util.List;
 /**
  * author: baiiu
  * date: on 16/1/17 21:14
+ * description:
+ * @auther: Leon
+ * modify time: 2017-07-12 18:37
  * description:
  */
 public class DropMenuAdapter implements MenuAdapter {
@@ -76,9 +80,29 @@ public class DropMenuAdapter implements MenuAdapter {
                 // view = createDoubleGrid();
                 view = createBetterDoubleGrid();
                 break;
+            case 4:
+                view = createBetterDoubleGridMultiSelect();
+                break;
         }
 
         return view;
+    }
+
+    private View createBetterDoubleGridMultiSelect() {
+        List<String> phases = new ArrayList<>();
+        for (int i = 0; i < 10; ++i) {
+            phases.add("4top" + i);
+        }
+        List<String> areas = new ArrayList<>();
+        for (int i = 0; i < 10; ++i) {
+            areas.add("4bottom" + i);
+        }
+
+        return new BetterDoubleGridMultiSelectView(mContext)
+                .setmTopGridData(phases)
+                .setmBottomGridList(areas)
+                .setOnFilterDoneListener(onFilterDoneListener)
+                .build();
     }
 
     private View createSingleListView() {

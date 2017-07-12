@@ -2,6 +2,10 @@ package com.baiiu.dropdownmenu.entity;
 
 import android.text.TextUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 描述：
  */
@@ -28,6 +32,8 @@ public class FilterUrl {
     public String singleGridPosition;
     public String doubleGridTop;
     public String doubleGridBottom;
+    public List<String> listDoubleGridTopMultiSelect = new ArrayList<>();
+    public List<String> listDoubleGridBottomMultiSelect = new ArrayList<>();
 
     public int position;
     public String positionTitle;
@@ -73,6 +79,17 @@ public class FilterUrl {
             buffer.append("\n");
         }
 
+        if (listDoubleGridTopMultiSelect.size() > 0) {
+            buffer.append("listDoubleGridTopMultiSelect=");
+            buffer.append(Arrays.deepToString(listDoubleGridTopMultiSelect.toArray()));
+            buffer.append("\n");
+        }
+
+        if (listDoubleGridBottomMultiSelect.size() > 0) {
+            buffer.append("listDoubleGridBottomMultiSelect=");
+            buffer.append(Arrays.deepToString(listDoubleGridBottomMultiSelect.toArray()));
+            buffer.append("\n");
+        }
         return buffer.toString();
     }
 
