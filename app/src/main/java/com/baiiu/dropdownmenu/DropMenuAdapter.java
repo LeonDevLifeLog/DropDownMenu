@@ -5,8 +5,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.baiiu.dropdownmenu.view.betterDoubleGrid.BetterDoubleGridMultiSelectView;
+import com.baiiu.dropdownmenu.entity.FilterType;
+import com.baiiu.dropdownmenu.entity.FilterUrl;
 import com.baiiu.dropdownmenu.view.betterDoubleGrid.BetterDoubleGridView;
+import com.baiiu.dropdownmenu.view.doubleGrid.DoubleGridView;
 import com.baiiu.filter.adapter.MenuAdapter;
 import com.baiiu.filter.adapter.SimpleTextAdapter;
 import com.baiiu.filter.interfaces.OnFilterDoneListener;
@@ -17,9 +19,6 @@ import com.baiiu.filter.typeview.SingleListView;
 import com.baiiu.filter.util.CommonUtil;
 import com.baiiu.filter.util.UIUtil;
 import com.baiiu.filter.view.FilterCheckedTextView;
-import com.baiiu.dropdownmenu.entity.FilterType;
-import com.baiiu.dropdownmenu.entity.FilterUrl;
-import com.baiiu.dropdownmenu.view.doubleGrid.DoubleGridView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,9 +97,10 @@ public class DropMenuAdapter implements MenuAdapter {
             areas.add("4bottom" + i);
         }
 
-        return new BetterDoubleGridMultiSelectView(mContext)
+        return new BetterDoubleGridView(mContext)
                 .setmTopGridData(phases)
-                .setmBottomGridList(areas)
+                .setmBottomGridData(areas)
+                .setSelectMode(BetterDoubleGridView.MULTI_SELECT)
                 .setOnFilterDoneListener(onFilterDoneListener)
                 .build();
     }
@@ -286,7 +286,7 @@ public class DropMenuAdapter implements MenuAdapter {
 
         return new BetterDoubleGridView(mContext)
                 .setmTopGridData(phases)
-                .setmBottomGridList(areas)
+                .setmBottomGridData(areas)
                 .setOnFilterDoneListener(onFilterDoneListener)
                 .build();
     }
