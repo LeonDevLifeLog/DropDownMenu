@@ -14,7 +14,7 @@ I have written it for several times, Now the code is most clearly.
 4. use FilterUrl to save the current choosen data, only override `toString()` you will get the url.
 
 ## ScreenShot
-![DropDownMenu](images/dropDownMenu.gif "Gif Example")
+![DropDownMenu](images/newDropDownMenu.gif "Gif Example")
 
 ## Usage 
 the xml: 

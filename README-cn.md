@@ -13,7 +13,7 @@
 4. 使用FilterUrl作为中介,toString()方法获取到所拼接url,隔离了数据和View,使代码更清晰.
 
 ## ScreenShot
-![DropDownMenu](images/dropDownMenu.gif "Gif Example")
+![DropDownMenu](images/newDropDownMenu.gif "Gif Example")
 
 
 
